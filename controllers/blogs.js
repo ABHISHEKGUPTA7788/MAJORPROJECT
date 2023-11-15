@@ -1,5 +1,6 @@
 import {Blog} from '../Models/blogs.js'
-
+import {User} from '../Models/users.js'
+ 
 
 export const createBlog = async(req,res)=>{
    
@@ -65,5 +66,51 @@ export const deleteBlog = async(req,res)=>{
     res.json({
         success:true,
         message:"Blog Deleted !!!"
+    })
+}
+
+export const getAllBlogs = async(req,res) =>{
+    const blogs = await Blog.find()
+     
+    if(!blogs) return res.status(404).json({
+        success:false,
+        message:"There is no Blog"
+    })
+ 
+    res.json({
+        success:true,
+        message:"All Blogs Fetched !!!",
+        blogs
+    })
+}
+export const getBlogbyId = async(req,res) =>{
+    const id = req.params.id 
+    const blog = await Blog.findById(id)
+     
+    if(!blog) return res.status(404).json({
+        success:false,
+        message:"There is no Blog found"
+    })
+ 
+    res.json({
+        success:true,
+        message:"Blog Fetched !!!",
+        blog
+    })
+}
+
+export const getUserbyId = async (req,res)=>{
+    const id = req.params.id 
+    const user = await User.findById(id)
+     
+    if(!user) return res.status(404).json({
+        success:false,
+        message:"There is no user found"
+    })
+ 
+    res.json({
+        success:true,
+        message:"user Fetched !!!",
+        user
     })
 }
