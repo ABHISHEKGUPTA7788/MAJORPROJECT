@@ -63,6 +63,7 @@ export const logout = (req, res) => {
 
 export const getMyProfile = (req,res) =>{
     res.status(200).json({
-        user:req.user
+        user:req.user,
+         success:true
     })
 }
