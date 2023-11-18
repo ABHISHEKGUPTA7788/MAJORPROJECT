@@ -16,6 +16,6 @@ router.get('/',(req,res)=>{
 router.post('/register',userRegister)
 router.post('/login',UserLogin)
 router.get('/logout', logout)
-router.get('/profile',isAuthenticated,getMyProfile)
+router.get('/profile',getMyProfile)
 
 export default router;
