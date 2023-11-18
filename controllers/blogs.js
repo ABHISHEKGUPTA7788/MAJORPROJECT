@@ -19,7 +19,6 @@ export const createBlog = async(req,res)=>{
 }
 export const myBlog = async (req,res)=>{
     const userid  = req.user._id
-
     const blogs = await Blog.find({user:userid})
 
     res.json({
@@ -51,7 +50,7 @@ export const updateBlog = async(req,res)=>{
         blog,
         message:"updating blog"
     })
-}
+} 
 export const deleteBlog = async(req,res)=>{
     const id = req.params.id
 

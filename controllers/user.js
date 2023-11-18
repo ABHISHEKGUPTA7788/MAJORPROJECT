@@ -62,8 +62,9 @@ export const logout = (req, res) => {
 }
 
 export const getMyProfile = (req,res,next) =>{
+    
     res.status(200).json({
-        success:"verified",
-        user:req.user
+        user:req.user,
+        success:"verified", 
     })
 }

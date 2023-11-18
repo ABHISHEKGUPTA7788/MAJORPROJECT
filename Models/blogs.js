@@ -24,4 +24,4 @@ const blogSchema =new mongoose.Schema({
      default:Date.now
     } 
 })
-export const Blog = mongoose.model('blog',blogSchema)
+export const Blog = mongoose.model('Blog',blogSchema)

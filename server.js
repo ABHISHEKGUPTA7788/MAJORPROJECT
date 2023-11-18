@@ -22,7 +22,7 @@ const port = process.env.PORT
 const URI = process.env.MONGO_URL
 mongoose.connect(URI,{dbName:"MAJORPROJECT"}).then(()=>console.log("server is connected"))
 
-app.use('/Backend/user',userRouter) //userrouter
+app.use('/Backend/user',userRouter) //userrouter 
  
 app.use('/Backend/blog',blogRouter) //blogrouter
 
