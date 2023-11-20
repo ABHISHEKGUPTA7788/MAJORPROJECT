@@ -7,6 +7,7 @@ import { generateCookie } from '../utils/features.js'
 export const userRegister = async (req, res) => {
     const { name, email, password } = req.body
 
+    console.log(name,email,password)
     let user = await User.findOne({ email })
     if (user) return res.status(404).json({
         sucess: false,
@@ -62,8 +63,7 @@ export const logout = (req, res) => {
 }
 
 
-export const getMyProfile = (req,res,next) =>{
-    
+export const getMyProfile = (req,res,next) =>{ 
     res.status(200).json({
         user:req.user,
         success:"verified", 
