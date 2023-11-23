@@ -14,7 +14,8 @@ export const createBlog = async(req,res)=>{
     })
     res.status(200).json({
         success:true,
-        message:"blog addded successfully !!!"
+        message:"blog addded successfully !!!",
+        user:req.user
     })
 }
 export const myBlog = async (req,res)=>{
@@ -79,7 +80,7 @@ export const getAllBlogs = async(req,res) =>{
     res.json({
         success:true,
         message:"All Blogs Fetched !!!",
-        blogs
+        blogs,
     })
 }
 export const getBlogbyId = async(req,res) =>{
@@ -94,7 +95,7 @@ export const getBlogbyId = async(req,res) =>{
     res.json({
         success:true,
         message:"Blog Fetched !!!",
-        blog
+        blog,
     })
 }
 
@@ -107,9 +108,9 @@ export const getUserbyId = async (req,res)=>{
         message:"There is no user found"
     })
  
-    res.json({
+   return res.json({
         success:true,
         message:"user Fetched !!!",
-        user
+        user:user
     })
 }
